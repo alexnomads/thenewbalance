@@ -1,11 +1,9 @@
 export const Manifesto = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <article className="container mx-auto max-w-4xl px-6 py-20">
         <header className="mb-16 text-center space-y-4">
-          <h1 className="text-4xl md:text-6xl font-bold font-heading text-foreground">
-            THE MANIFESTO OF THE NEW BALANCE
-          </h1>
+          <h1 className="text-4xl md:text-6xl font-bold font-heading text-foreground">THE MANIFESTO OF 
+THE NEW BALANCE</h1>
         </header>
 
         <div className="prose prose-lg max-w-none space-y-12">
@@ -148,8 +146,6 @@ export const Manifesto = () => {
           </section>
         </div>
       </article>
-    </div>
-  );
+    </div>;
 };
-
 export default Manifesto;
