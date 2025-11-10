@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-
 export const Hero = () => {
-  return (
-    <section className="min-h-screen flex items-center justify-center px-6 py-20 relative overflow-hidden">
+  return <section className="min-h-screen flex items-center justify-center px-6 py-20 relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-[var(--gradient-hero)]" />
       
@@ -12,9 +10,11 @@ export const Hero = () => {
       
       <div className="container mx-auto max-w-5xl relative z-10">
         <div className="text-center space-y-8 animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight font-heading">
-            The New Balance:{" "}
-            <span className="text-primary">Freedom</span>,{" "}
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight font-heading">The New Balance:
+Freedom, Fairness, 
+Intelligence.{" "}
+            <span className="text-primary">
+Freedom</span>,{" "}
             <span className="text-secondary">Fairness</span>,{" "}
             <span className="text-foreground">Intelligence</span>.
           </h1>
@@ -38,6 +38,5 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };

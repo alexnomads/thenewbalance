@@ -1,9 +1,8 @@
 export const TheIdea = () => {
-  return (
-    <section className="py-24 px-6 bg-card">
+  return <section className="py-24 px-6 bg-card">
       <div className="container mx-auto max-w-4xl">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 font-heading">
-          We're not left or right. We're <span className="text-primary">forward</span>.
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 font-heading">We're not left or right. 
+We're forward.<span className="text-primary">forward</span>.
         </h2>
         
         <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
@@ -23,6 +22,5 @@ export const TheIdea = () => {
           </p>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
