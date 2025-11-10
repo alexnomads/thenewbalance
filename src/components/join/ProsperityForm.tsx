@@ -9,11 +9,13 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { CheckCircle2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
   name: z.string().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
   location: z.string().min(1, "Location is required").max(100, "Location must be less than 100 characters"),
-  role: z.enum(["organizer", "researcher", "donor", "tech-volunteer"], {
+  role: z.enum(["organizer", "researcher", "donor", "tech_volunteer"], {
     required_error: "Please select a role",
   }),
   interest: z.string().max(500, "Plan/interest must be less than 500 characters").optional(),
@@ -27,6 +29,8 @@ interface ProsperityFormProps {
 
 export const ProsperityForm = ({ onBack }: ProsperityFormProps) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -38,9 +42,36 @@ export const ProsperityForm = ({ onBack }: ProsperityFormProps) => {
     },
   });
 
-  const onSubmit = (data: FormData) => {
-    console.log("Shared Prosperity & Freedom Form Submission:", data);
-    setIsSubmitted(true);
+  const onSubmit = async (data: FormData) => {
+    setIsSubmitting(true);
+    
+    try {
+      const { error } = await supabase
+        .from('prosperity_applications')
+        .insert({
+          name: data.name,
+          location: data.location,
+          role: data.role,
+          interest: data.interest || null,
+        });
+
+      if (error) throw error;
+
+      setIsSubmitted(true);
+      toast({
+        title: "Application submitted!",
+        description: "Thank you for supporting shared prosperity & freedom.",
+      });
+    } catch (error) {
+      console.error("Error submitting application:", error);
+      toast({
+        title: "Submission failed",
+        description: "There was an error submitting your application. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -157,7 +188,7 @@ export const ProsperityForm = ({ onBack }: ProsperityFormProps) => {
                       </FormItem>
                       <FormItem className="flex items-center space-x-3 space-y-0">
                         <FormControl>
-                          <RadioGroupItem value="tech-volunteer" />
+                          <RadioGroupItem value="tech_volunteer" />
                         </FormControl>
                         <FormLabel className="font-normal cursor-pointer">Tech Volunteer</FormLabel>
                       </FormItem>
@@ -191,8 +222,8 @@ export const ProsperityForm = ({ onBack }: ProsperityFormProps) => {
               <Button type="button" variant="outline" onClick={onBack}>
                 Back
               </Button>
-              <Button type="submit" className="flex-1">
-                Submit Application
+              <Button type="submit" className="flex-1" disabled={isSubmitting}>
+                {isSubmitting ? "Submitting..." : "Submit Application"}
               </Button>
             </div>
           </form>

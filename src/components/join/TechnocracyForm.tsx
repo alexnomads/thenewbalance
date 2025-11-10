@@ -8,6 +8,8 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { CheckCircle2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
   name: z.string().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
@@ -27,6 +29,8 @@ interface TechnocracyFormProps {
 
 export const TechnocracyForm = ({ onBack }: TechnocracyFormProps) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -39,9 +43,37 @@ export const TechnocracyForm = ({ onBack }: TechnocracyFormProps) => {
     },
   });
 
-  const onSubmit = (data: FormData) => {
-    console.log("Technocratic Democracy Form Submission:", data);
-    setIsSubmitted(true);
+  const onSubmit = async (data: FormData) => {
+    setIsSubmitting(true);
+    
+    try {
+      const { error } = await supabase
+        .from('technocracy_applications')
+        .insert({
+          name: data.name,
+          city: data.city,
+          skills: data.skills,
+          availability: data.availability,
+          role: data.role,
+        });
+
+      if (error) throw error;
+
+      setIsSubmitted(true);
+      toast({
+        title: "Application submitted!",
+        description: "Thank you for joining technocratic democracy.",
+      });
+    } catch (error) {
+      console.error("Error submitting application:", error);
+      toast({
+        title: "Submission failed",
+        description: "There was an error submitting your application. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -201,8 +233,8 @@ export const TechnocracyForm = ({ onBack }: TechnocracyFormProps) => {
               <Button type="button" variant="outline" onClick={onBack}>
                 Back
               </Button>
-              <Button type="submit" className="flex-1">
-                Submit Application
+              <Button type="submit" className="flex-1" disabled={isSubmitting}>
+                {isSubmitting ? "Submitting..." : "Submit Application"}
               </Button>
             </div>
           </form>

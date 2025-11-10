@@ -10,6 +10,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
 import { CheckCircle2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
   name: z.string().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
@@ -32,6 +34,8 @@ interface OpenSourceFormProps {
 
 export const OpenSourceForm = ({ onBack }: OpenSourceFormProps) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -45,9 +49,38 @@ export const OpenSourceForm = ({ onBack }: OpenSourceFormProps) => {
     },
   });
 
-  const onSubmit = (data: FormData) => {
-    console.log("Open-Source Capitalism Form Submission:", data);
-    setIsSubmitted(true);
+  const onSubmit = async (data: FormData) => {
+    setIsSubmitting(true);
+    
+    try {
+      const { error } = await supabase
+        .from('open_source_contributions')
+        .insert({
+          name: data.name,
+          email: data.email,
+          contribution_type: data.contributionType,
+          link: data.link,
+          description: data.description || "",
+          terms_accepted: data.termsAccepted,
+        });
+
+      if (error) throw error;
+
+      setIsSubmitted(true);
+      toast({
+        title: "Contribution submitted!",
+        description: "Thank you for contributing to open-source capitalism.",
+      });
+    } catch (error) {
+      console.error("Error submitting contribution:", error);
+      toast({
+        title: "Submission failed",
+        description: "There was an error submitting your contribution. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const description = form.watch("description");
@@ -240,8 +273,8 @@ export const OpenSourceForm = ({ onBack }: OpenSourceFormProps) => {
               <Button type="button" variant="outline" onClick={onBack}>
                 Back
               </Button>
-              <Button type="submit" className="flex-1">
-                Submit Contribution
+              <Button type="submit" className="flex-1" disabled={isSubmitting}>
+                {isSubmitting ? "Submitting..." : "Submit Contribution"}
               </Button>
             </div>
           </form>

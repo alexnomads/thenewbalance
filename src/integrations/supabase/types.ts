@@ -14,7 +14,96 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      open_source_contributions: {
+        Row: {
+          contribution_type: string
+          created_at: string
+          description: string
+          email: string
+          id: string
+          link: string
+          name: string
+          terms_accepted: boolean
+        }
+        Insert: {
+          contribution_type: string
+          created_at?: string
+          description: string
+          email: string
+          id?: string
+          link: string
+          name: string
+          terms_accepted?: boolean
+        }
+        Update: {
+          contribution_type?: string
+          created_at?: string
+          description?: string
+          email?: string
+          id?: string
+          link?: string
+          name?: string
+          terms_accepted?: boolean
+        }
+        Relationships: []
+      }
+      prosperity_applications: {
+        Row: {
+          created_at: string
+          id: string
+          interest: string | null
+          location: string
+          name: string
+          role: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          interest?: string | null
+          location: string
+          name: string
+          role: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          interest?: string | null
+          location?: string
+          name?: string
+          role?: string
+        }
+        Relationships: []
+      }
+      technocracy_applications: {
+        Row: {
+          availability: string
+          city: string
+          created_at: string
+          id: string
+          name: string
+          role: string
+          skills: string
+        }
+        Insert: {
+          availability: string
+          city: string
+          created_at?: string
+          id?: string
+          name: string
+          role: string
+          skills: string
+        }
+        Update: {
+          availability?: string
+          city?: string
+          created_at?: string
+          id?: string
+          name?: string
+          role?: string
+          skills?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
