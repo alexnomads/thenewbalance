@@ -11,8 +11,7 @@ export const Hero = () => {
       
       <div className="container mx-auto max-w-5xl relative z-10">
         <div className="text-center space-y-8 animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight font-heading">
-            <span className="text-primary">Freedom</span>,{" "}
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight font-heading">Intelligence Freedom, Fairness, Intelligence.<span className="text-primary">Freedom</span>,{" "}
             <span className="text-secondary">Fairness</span>,{" "}
             <span className="text-foreground">Intelligence</span>.
           </h1>
