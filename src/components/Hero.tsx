@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 export const Hero = () => {
   return <section className="min-h-screen flex items-center justify-center px-6 py-20 relative overflow-hidden">
       {/* Background gradient */}
@@ -29,8 +30,8 @@ Freedom</span>,{" "}
               Join the movement
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button size="lg" variant="outline" className="text-lg">
-              Read the Manifesto
+            <Button size="lg" variant="outline" className="text-lg" asChild>
+              <Link to="/manifesto">Read the Manifesto</Link>
             </Button>
             <Button size="lg" variant="secondary" className="text-lg">
               Build the Future

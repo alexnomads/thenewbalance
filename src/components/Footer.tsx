@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
@@ -17,8 +18,8 @@ export const Footer = () => {
             <Button variant="outline" className="bg-transparent border-background text-background hover:bg-background hover:text-foreground">
               Join
             </Button>
-            <Button variant="outline" className="bg-transparent border-background text-background hover:bg-background hover:text-foreground">
-              Manifesto PDF
+            <Button variant="outline" className="bg-transparent border-background text-background hover:bg-background hover:text-foreground" asChild>
+              <Link to="/manifesto">Manifesto</Link>
             </Button>
             <Button variant="outline" className="bg-transparent border-background text-background hover:bg-background hover:text-foreground">
               Newsletter
