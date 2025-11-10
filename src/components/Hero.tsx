@@ -24,9 +24,11 @@ export const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
-            <Button size="lg" className="text-lg group">
-              Join the movement
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            <Button size="lg" className="text-lg group" asChild>
+              <Link to="/join">
+                Join the movement
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </Button>
             <Button size="lg" variant="outline" className="text-lg" asChild>
               <Link to="/manifesto">Read the Manifesto</Link>

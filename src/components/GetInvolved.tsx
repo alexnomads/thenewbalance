@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Users, MapPin, FileText, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const actions = [
   {
@@ -46,9 +47,11 @@ export const GetInvolved = () => {
         </div>
         
         <div className="text-center">
-          <Button size="lg" className="text-lg group">
-            Join the movement today
-            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+          <Button size="lg" className="text-lg group" asChild>
+            <Link to="/join">
+              Join the movement today
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </Button>
         </div>
       </div>
