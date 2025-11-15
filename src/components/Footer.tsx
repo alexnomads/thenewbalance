@@ -15,11 +15,14 @@ export const Footer = () => {
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 pt-6">
-            <Button variant="outline" className="bg-transparent border-background text-background hover:bg-background hover:text-foreground">
-              Join
+            <Button variant="outline" className="bg-transparent border-background text-background hover:bg-background hover:text-foreground" asChild>
+              <Link to="/join">Join</Link>
             </Button>
             <Button variant="outline" className="bg-transparent border-background text-background hover:bg-background hover:text-foreground" asChild>
               <Link to="/manifesto">Manifesto</Link>
+            </Button>
+            <Button variant="outline" className="bg-transparent border-background text-background hover:bg-background hover:text-foreground" asChild>
+              <Link to="/daedalus">Project Daedalus</Link>
             </Button>
             <Button variant="outline" className="bg-transparent border-background text-background hover:bg-background hover:text-foreground">
               Newsletter

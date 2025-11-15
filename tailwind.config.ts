@@ -65,6 +65,18 @@ export default {
           DEFAULT: "hsl(var(--blue-primary))",
           dark: "hsl(var(--blue-dark))",
         },
+        agora: {
+          DEFAULT: "hsl(var(--agora))",
+          light: "hsl(var(--agora-light))",
+        },
+        acorn: {
+          DEFAULT: "hsl(var(--acorn))",
+          light: "hsl(var(--acorn-light))",
+        },
+        aegis: {
+          DEFAULT: "hsl(var(--aegis))",
+          light: "hsl(var(--aegis-light))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

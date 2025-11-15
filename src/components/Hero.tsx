@@ -33,8 +33,8 @@ export const Hero = () => {
             <Button size="lg" variant="outline" className="text-lg" asChild>
               <Link to="/manifesto">Read the Manifesto</Link>
             </Button>
-            <Button size="lg" variant="secondary" className="text-lg">
-              Build the Future
+            <Button size="lg" variant="secondary" className="text-lg" asChild>
+              <Link to="/daedalus">Build the Future</Link>
             </Button>
           </div>
         </div>
