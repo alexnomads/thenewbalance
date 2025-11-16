@@ -8,45 +8,51 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 0 0% 15%;
+    /* TNB Brand Colors - Main Identity */
+    --tnb-deep-blue: 217 79% 22%;         /* Deep Blue #0C2A66 - structure, intelligence */
+    --tnb-bright-orange: 26 90% 54%;      /* Bright Orange #F47A1F - energy, connection */
+    --tnb-bone: 38 27% 93%;               /* Bone/Off-White #F2EEE7 - background */
+    --tnb-soft-gray: 40 10% 83%;          /* Soft Gray #D7D4CE - subtle structure */
+    
+    --background: 38 27% 93%;              /* Use bone color as background */
+    --foreground: 217 79% 22%;             /* Deep blue for text */
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 15%;
+    --card-foreground: 217 79% 22%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 15%;
+    --popover-foreground: 217 79% 22%;
 
-    /* Orange - Energy & Openness */
-    --primary: 24 95% 53%;
+    /* Primary = Bright Orange (Energy & Openness) */
+    --primary: 26 90% 54%;
     --primary-foreground: 0 0% 100%;
 
-    /* Blue - Stability & Intelligence */
-    --secondary: 217 91% 60%;
+    /* Secondary = Deep Blue (Stability & Intelligence) */
+    --secondary: 217 79% 22%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 95%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 40 10% 88%;
+    --muted-foreground: 217 79% 32%;
 
-    --accent: 24 95% 53%;
+    --accent: 26 90% 54%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 24 95% 53%;
+    --border: 40 10% 83%;
+    --input: 40 10% 88%;
+    --ring: 26 90% 54%;
 
     --radius: 0.5rem;
 
     /* Custom tokens for The New Balance */
-    --orange-primary: 24 95% 53%;
-    --orange-light: 24 95% 65%;
-    --blue-primary: 217 91% 60%;
-    --blue-dark: 217 91% 45%;
-    --grey-canvas: 0 0% 98%;
-    --grey-dark: 0 0% 15%;
+    --orange-primary: 26 90% 54%;
+    --orange-light: 26 90% 65%;
+    --blue-primary: 217 79% 22%;
+    --blue-dark: 217 79% 15%;
+    --grey-canvas: 38 27% 93%;
+    --grey-dark: 217 79% 22%;
 
     /* Daedalus-specific colors matching the logo */
     --daedalus-blue-deep: 217 91% 37%;
@@ -65,9 +71,10 @@ All colors MUST be HSL.
     --aegis: 45 93% 48%;
     --aegis-light: 45 93% 62%;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(24 95% 53% / 0.1) 0%, hsl(217 91% 60% / 0.1) 100%);
-    --gradient-accent: linear-gradient(90deg, hsl(24 95% 53%) 0%, hsl(217 91% 60%) 100%);
+    /* Gradients - TNB Brand */
+    --gradient-hero: linear-gradient(135deg, hsl(217 79% 22% / 0.05) 0%, hsl(26 90% 54% / 0.1) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(217 79% 22%) 0%, hsl(26 90% 54%) 100%);
+    --gradient-circle: radial-gradient(circle, hsl(217 79% 22% / 0.8) 0%, hsl(217 79% 32% / 0.4) 100%);
     --gradient-daedalus-hero: linear-gradient(135deg, hsl(217 91% 37% / 0.15) 0%, hsl(24 95% 53% / 0.15) 50%, hsl(45 93% 58% / 0.15) 100%);
     --gradient-daedalus-accent: linear-gradient(90deg, hsl(217 91% 55%) 0%, hsl(24 95% 53%) 50%, hsl(45 93% 58%) 100%);
 
@@ -82,19 +89,19 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 0 0% 10%;
-    --foreground: 0 0% 95%;
+    --background: 217 79% 15%;
+    --foreground: 38 27% 93%;
 
-    --card: 0 0% 12%;
-    --card-foreground: 0 0% 95%;
+    --card: 217 79% 18%;
+    --card-foreground: 38 27% 93%;
 
-    --popover: 0 0% 12%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 217 79% 18%;
+    --popover-foreground: 38 27% 93%;
 
-    --primary: 24 95% 53%;
+    --primary: 26 90% 54%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 217 91% 60%;
+    --secondary: 217 79% 35%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 0 0% 20%;
@@ -113,7 +120,8 @@ All colors MUST be HSL.
     --grey-canvas: 0 0% 10%;
     --grey-dark: 0 0% 95%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(24 95% 53% / 0.2) 0%, hsl(217 91% 60% / 0.2) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(217 79% 22% / 0.3) 0%, hsl(26 90% 54% / 0.2) 100%);
+    --gradient-circle: radial-gradient(circle, hsl(217 79% 35% / 0.8) 0%, hsl(217 79% 25% / 0.4) 100%);
 
     --sidebar-background: 0 0% 10%;
     --sidebar-foreground: 0 0% 95%;
