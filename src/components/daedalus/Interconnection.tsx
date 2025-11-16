@@ -35,10 +35,16 @@ export const Interconnection = () => {
         {/* Interconnection diagram */}
         <div className="mb-12 flex justify-center">
           <div className="relative w-full max-w-md aspect-square">
-            {/* Center circle */}
+            {/* Center circle with gradient */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="bg-background border-4 border-primary rounded-full w-32 h-32 flex items-center justify-center shadow-lg">
-                <div className="text-center">
+              <div 
+                className="rounded-full w-32 h-32 flex items-center justify-center shadow-lg border-4"
+                style={{
+                  background: "var(--gradient-daedalus-accent)",
+                  borderColor: "hsl(var(--daedalus-gold))"
+                }}
+              >
+                <div className="text-center text-white">
                   <div className="font-bold text-sm">The New</div>
                   <div className="font-bold text-sm">Balance</div>
                 </div>
@@ -66,11 +72,11 @@ export const Interconnection = () => {
               </div>
             </div>
 
-            {/* Connection lines */}
+            {/* Connection lines with module colors */}
             <svg className="absolute inset-0 w-full h-full" style={{ zIndex: -1 }}>
-              <line x1="50%" y1="20%" x2="50%" y2="50%" stroke="hsl(var(--border))" strokeWidth="2" strokeDasharray="5,5" />
-              <line x1="50%" y1="50%" x2="20%" y2="80%" stroke="hsl(var(--border))" strokeWidth="2" strokeDasharray="5,5" />
-              <line x1="50%" y1="50%" x2="80%" y2="80%" stroke="hsl(var(--border))" strokeWidth="2" strokeDasharray="5,5" />
+              <line x1="50%" y1="20%" x2="50%" y2="50%" stroke="hsl(var(--agora))" strokeWidth="2" strokeDasharray="5,5" />
+              <line x1="50%" y1="50%" x2="20%" y2="80%" stroke="hsl(var(--acorn))" strokeWidth="2" strokeDasharray="5,5" />
+              <line x1="50%" y1="50%" x2="80%" y2="80%" stroke="hsl(var(--aegis))" strokeWidth="2" strokeDasharray="5,5" />
             </svg>
           </div>
         </div>

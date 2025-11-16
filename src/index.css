@@ -48,17 +48,28 @@ All colors MUST be HSL.
     --grey-canvas: 0 0% 98%;
     --grey-dark: 0 0% 15%;
 
-    /* Module colors for Project Daedalus */
-    --agora: 211 85% 55%;
-    --agora-light: 211 85% 70%;
-    --acorn: 142 76% 36%;
-    --acorn-light: 142 76% 50%;
-    --aegis: 262 52% 47%;
-    --aegis-light: 262 52% 62%;
+    /* Daedalus-specific colors matching the logo */
+    --daedalus-blue-deep: 217 91% 37%;
+    --daedalus-blue-bright: 217 91% 60%;
+    --daedalus-orange: 24 95% 53%;
+    --daedalus-orange-light: 24 95% 65%;
+    --daedalus-gold: 45 93% 58%;
+    --daedalus-gold-light: 45 93% 70%;
+    --daedalus-beige: 33 46% 90%;
+
+    /* Module colors inspired by logo layers */
+    --agora: 217 91% 55%;
+    --agora-light: 217 91% 70%;
+    --acorn: 24 95% 53%;
+    --acorn-light: 24 95% 65%;
+    --aegis: 45 93% 48%;
+    --aegis-light: 45 93% 62%;
 
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(24 95% 53% / 0.1) 0%, hsl(217 91% 60% / 0.1) 100%);
     --gradient-accent: linear-gradient(90deg, hsl(24 95% 53%) 0%, hsl(217 91% 60%) 100%);
+    --gradient-daedalus-hero: linear-gradient(135deg, hsl(217 91% 37% / 0.15) 0%, hsl(24 95% 53% / 0.15) 50%, hsl(45 93% 58% / 0.15) 100%);
+    --gradient-daedalus-accent: linear-gradient(90deg, hsl(217 91% 55%) 0%, hsl(24 95% 53%) 50%, hsl(45 93% 58%) 100%);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 0 0% 15%;
