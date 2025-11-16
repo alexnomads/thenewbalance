@@ -77,6 +77,21 @@ export default {
           DEFAULT: "hsl(var(--aegis))",
           light: "hsl(var(--aegis-light))",
         },
+        daedalus: {
+          blue: {
+            DEFAULT: "hsl(var(--daedalus-blue-bright))",
+            deep: "hsl(var(--daedalus-blue-deep))",
+          },
+          orange: {
+            DEFAULT: "hsl(var(--daedalus-orange))",
+            light: "hsl(var(--daedalus-orange-light))",
+          },
+          gold: {
+            DEFAULT: "hsl(var(--daedalus-gold))",
+            light: "hsl(var(--daedalus-gold-light))",
+          },
+          beige: "hsl(var(--daedalus-beige))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

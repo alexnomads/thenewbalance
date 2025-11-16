@@ -15,9 +15,9 @@ export const CTASection = () => {
           </p>
         </div>
 
-        {/* CTA buttons */}
+        {/* CTA buttons with module colors */}
         <div className="flex flex-wrap justify-center gap-6 mb-16">
-          <Button size="lg" asChild className="group">
+          <Button size="lg" asChild className="group bg-acorn hover:bg-acorn-light">
             <Link to="/join?pillar=capitalism">
               <Code className="mr-2 h-5 w-5" />
               Contribute to Development
@@ -25,7 +25,7 @@ export const CTASection = () => {
             </Link>
           </Button>
 
-          <Button size="lg" variant="secondary" asChild className="group">
+          <Button size="lg" variant="outline" asChild className="group border-agora text-agora hover:bg-agora/10">
             <Link to="/manifesto">
               <BookOpen className="mr-2 h-5 w-5" />
               Read the Full Manifesto
@@ -33,7 +33,7 @@ export const CTASection = () => {
             </Link>
           </Button>
 
-          <Button size="lg" variant="outline" asChild className="group">
+          <Button size="lg" asChild className="group bg-aegis hover:bg-aegis-light">
             <Link to="/join">
               <Users className="mr-2 h-5 w-5" />
               Join the Community
