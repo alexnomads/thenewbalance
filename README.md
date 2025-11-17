@@ -1,8 +1,8 @@
-Project Daedalus — Aegis
+<b>Project Daedalus</b>
 
 Privacy-preserving voting, polling, and integrity verification powered by zero-knowledge proofs and zkVerify.
 
-Overview
+<b>Overview</b>
 
 Aegis is a web application that lets any organization run private, verifiable votes without exposing voter identities or choices. It delivers a simple web experience while relying on modern proving systems zK technology for fast, low-cost proof validation.
 
@@ -16,11 +16,11 @@ The Aegis — private voting and reputation integrity
 
 This repository hosts the Aegis codebase and integration with zkVerify.
 
-Why Aegis
+<b>Why Aegis</b>
 
 Traditional digital voting tools expose identity or trust assumptions. Aegis uses ZKPs to show eligibility and single-use voting without revealing who voted or how. zkVerify serves as the verification layer, removing the high cost and slow performance of general-purpose L1 verification.
 
-Key benefits:
+<b>Key benefits:</b>
 
 Private, tamper-resistant voting
 
@@ -32,7 +32,7 @@ Scalable proof validation via zkVerify’s Verifier Pallets
 
 Proof receipts published to a settlement chain (e.g., Base) for public auditability
 
-How it Works
+<b>How it Works</b>
 
 Admin Setup: Create a vote and upload a list of eligible voter emails.
 
@@ -46,29 +46,10 @@ Verification: zkVerify validates the proof through the appropriate Verifier Pall
 
 Attestation: Aggregated proof receipts are posted to a settlement chain for open verification.
 
-Tech Stack
-
-Frontend: Vue, Tailwind, Vite
-
-Backend: Node/TypeScript
-
-ZK: Risc Zero or SP1 for proof generation
-
-Verification: zkVerify L1, zkVerifyJS SDK
-
-Auth & Delivery: Email-based single-use access links
-
-Storage & Infra: Firebase and supporting APIs
-
-
-Vision
+<b>Vision</b>
 
 Daedalus aims to modernize civic participation by combining privacy, transparency, and shared digital ownership. Aegis is the first step toward trustworthy, accessible democratic tools powered by open-source infrastructure.
 
-License
-
-MIT
-
-Contributing
+<b>Contributing</b>
 
 Issues and pull requests are welcome. Documentation and code are fully open for community reuse.
