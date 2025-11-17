@@ -1,73 +1,74 @@
-# Welcome to your Lovable project
+Project Daedalus — Aegis
 
-## Project info
+Privacy-preserving voting, polling, and integrity verification powered by zero-knowledge proofs and zkVerify.
 
-**URL**: https://lovable.dev/projects/3841cfc2-f7e2-4ec4-8cf2-c40922a59ce7
+Overview
 
-## How can I edit this code?
+Aegis is a web application that lets any organization run private, verifiable votes without exposing voter identities or choices. It delivers a simple web experience while relying on modern proving systems zK technology for fast, low-cost proof validation.
 
-There are several ways of editing your application.
+Aegis is the first module of Project Daedalus, a suite of open-source civic tools that includes:
 
-**Use Lovable**
+The Agora — transparent public finance ledger
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3841cfc2-f7e2-4ec4-8cf2-c40922a59ce7) and start prompting.
+The Acorn — cooperative capital fund
 
-Changes made via Lovable will be committed automatically to this repo.
+The Aegis — private voting and reputation integrity
 
-**Use your preferred IDE**
+This repository hosts the Aegis codebase and integration with zkVerify.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Why Aegis
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Traditional digital voting tools expose identity or trust assumptions. Aegis uses ZKPs to show eligibility and single-use voting without revealing who voted or how. zkVerify serves as the verification layer, removing the high cost and slow performance of general-purpose L1 verification.
 
-Follow these steps:
+Key benefits:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Private, tamper-resistant voting
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+One-person-one-vote without identity leakage
 
-# Step 3: Install the necessary dependencies.
-npm i
+No blockchain friction for users
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Scalable proof validation via zkVerify’s Verifier Pallets
 
-**Edit a file directly in GitHub**
+Proof receipts published to a settlement chain (e.g., Base) for public auditability
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+How it Works
 
-**Use GitHub Codespaces**
+Admin Setup: Create a vote and upload a list of eligible voter emails.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+User Access: Each voter receives a unique single-use link.
 
-## What technologies are used for this project?
+Proof Generation: The browser generates a ZKP confirming eligibility and first-time participation.
 
-This project is built with:
+Submission: The encrypted vote and proof are sent through the backend to zkVerify via the zkVerifyJS SDK.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Verification: zkVerify validates the proof through the appropriate Verifier Pallet.
 
-## How can I deploy this project?
+Attestation: Aggregated proof receipts are posted to a settlement chain for open verification.
 
-Simply open [Lovable](https://lovable.dev/projects/3841cfc2-f7e2-4ec4-8cf2-c40922a59ce7) and click on Share -> Publish.
+Tech Stack
 
-## Can I connect a custom domain to my Lovable project?
+Frontend: Vue, Tailwind, Vite
 
-Yes, you can!
+Backend: Node/TypeScript
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+ZK: Risc Zero or SP1 for proof generation
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Verification: zkVerify L1, zkVerifyJS SDK
+
+Auth & Delivery: Email-based single-use access links
+
+Storage & Infra: Firebase and supporting APIs
+
+
+Vision
+
+Daedalus aims to modernize civic participation by combining privacy, transparency, and shared digital ownership. Aegis is the first step toward trustworthy, accessible democratic tools powered by open-source infrastructure.
+
+License
+
+MIT
+
+Contributing
+
+Issues and pull requests are welcome. Documentation and code are fully open for community reuse.
