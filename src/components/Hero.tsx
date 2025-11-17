@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import tnbLogo from "@/assets/tnb-logo.png";
 
 export const Hero = () => {
   return (
@@ -13,6 +14,17 @@ export const Hero = () => {
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[800px] md:h-[800px] rounded-full opacity-40"
         style={{ background: "var(--gradient-circle)" }}
       />
+      
+      {/* TNB Logo watermark inside circle */}
+      <div 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[800px] md:h-[800px] flex items-center justify-center pointer-events-none"
+      >
+        <img 
+          src={tnbLogo} 
+          alt="" 
+          className="w-[400px] h-[400px] md:w-[500px] md:h-[500px] object-contain opacity-[0.15] mix-blend-multiply dark:mix-blend-screen dark:opacity-[0.10]"
+        />
+      </div>
       
       {/* Circuit-like network patterns */}
       <svg className="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
