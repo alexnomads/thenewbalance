@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Twitter } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import tnbLogo from "@/assets/tnb-logo.png";
@@ -49,6 +49,21 @@ export const Header = () => {
                 </Button>
               </Link>
             ))}
+            <a 
+              href="https://x.com/tnbmov" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="ml-2"
+            >
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-foreground hover:text-primary"
+                aria-label="Follow us on X"
+              >
+                <Twitter className="h-5 w-5" />
+              </Button>
+            </a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -86,6 +101,21 @@ export const Header = () => {
                 </Button>
               </Link>
             ))}
+            <a 
+              href="https://x.com/tnbmov" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <Button
+                variant="ghost"
+                className="w-full justify-start text-foreground"
+              >
+                <Twitter className="h-5 w-5 mr-2" />
+                Follow on X
+              </Button>
+            </a>
           </nav>
         )}
       </div>

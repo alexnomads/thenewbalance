@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { Twitter } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -29,6 +30,12 @@ export const Footer = () => {
             </Button>
             <Button variant="outline" className="bg-transparent border-background text-background hover:bg-background hover:text-foreground">
               Forum
+            </Button>
+            <Button variant="outline" className="bg-transparent border-background text-background hover:bg-background hover:text-foreground" asChild>
+              <a href="https://x.com/tnbmov" target="_blank" rel="noopener noreferrer">
+                <Twitter className="h-4 w-4 mr-2 inline" />
+                Follow on X
+              </a>
             </Button>
           </div>
           
