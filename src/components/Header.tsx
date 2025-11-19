@@ -1,8 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Twitter } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import tnbLogo from "@/assets/tnb-logo.png";
+import xLogo from "@/assets/x-logo.png";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -61,7 +62,7 @@ export const Header = () => {
                 className="text-foreground hover:text-primary"
                 aria-label="Follow us on X"
               >
-                <Twitter className="h-5 w-5" />
+                <img src={xLogo} alt="X" className="h-4 w-4" />
               </Button>
             </a>
           </nav>
@@ -112,7 +113,7 @@ export const Header = () => {
                 variant="ghost"
                 className="w-full justify-start text-foreground"
               >
-                <Twitter className="h-5 w-5 mr-2" />
+                <img src={xLogo} alt="X" className="h-4 w-4 mr-2" />
                 Follow on X
               </Button>
             </a>
